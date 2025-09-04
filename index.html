@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionEdge | Innovative Tech Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for elements Tailwind can't handle */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold gradient-text">IT Techfusion</span>
+                    </div>
+                    <div class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="#home" class="nav-link inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-900 hover:text-blue-600">Home</a>
+                        <a href="#about" class="nav-link inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-900 hover:text-blue-600">About</a>
+                        <a href="#gradient-text" class="nav-link inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-900 hover:text-blue-600">Services</a>
+                        <a href="#courses" class="nav-link inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-900 hover:text-blue-600">Courses</a>
+                        <a href="#blog" class="nav-link inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-900 hover:text-blue-600">Blog</a>
+                        <a href="#contact" class="nav-link inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-900 hover:text-blue-600">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden md:ml-4 md:flex md:items-center md:pr-0">
+                    <button class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:from-blue-600 hover:to-purple-700 transition duration-300">Get Started</button>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#home" class="block pl-3 pr-4 py-2 border-l-4 border-blue-500 text-base font-medium text-blue-700 bg-blue-50">Home</a>
+                <a href="#about" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800">About</a>
+                <a href="#services" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800">Services</a>
+                <a href="#courses" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800">Courses</a>
+                <a href="#blog" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800">Blog</a>
+                <a href="#contact" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800">Contact</a>
+                <div class="mt-4 pl-3 pr-4">
+                    <button class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:from-blue-600 hover:to-purple-700 transition duration-300">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Home Page -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8">
+        <!-- Hero Section -->
+        <div class="max-w-7xl mx-auto">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                    <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                        <span class="block">IT Techfusion</span>
+                        <span class="block gradient-text">Solutions</span>
+                    </h1>
+                    <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        Empowering businesses with IT Techfusion solutions tailored to your unique needs.
+                    </p>
+                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                            <a href="#services" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 transition duration-300">
+                                Our Services
+                            </a>
+                            <a href="#contact" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10 transition duration-300">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
+                        <div class="relative block w-full bg-white rounded-lg overflow-hidden">
+                            <img class="w-full h-auto" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="Tech solutions">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-50"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-16 bg-gray-100 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Our <span class="gradient-text">Services</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Comprehensive solutions designed to drive your business forward
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">
+                            <i class="fas fa-laptop-code text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Custom Software Development</h3>
+                        <p class="mt-2 text-gray-500">
+                            Tailored software solutions built to streamline your operations and enhance productivity.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Learn more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white mb-4">
+                            <i class="fas fa-cloud text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Cloud Solutions</h3>
+                        <p class="mt-2 text-gray-500">
+                            Scalable cloud infrastructure to support your business growth and digital transformation.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Learn more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mb-4">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Cybersecurity</h3>
+                        <p class="mt-2 text-gray-500">
+                            Comprehensive security solutions to protect your digital assets and customer data.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Learn more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white mb-4">
+                            <i class="fas fa-cloud text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Data Analytics & Business Intelligence</h3>
+                        <p class="mt-2 text-gray-500">
+                            Transform raw data into actionable insights with our advanced analytics and visualization tools.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Learn more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">AI & Machine Learning</h3>
+                        <p class="mt-2 text-gray-500">
+                            Leverage cutting-edge AI/ML models to automate tasks, detect anomalies, and enhance decision-making.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Learn more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mb-4">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">IT Consulting & Strategy</h3>
+                        <p class="mt-2 text-gray-500">
+                            Expert IT consulting services to align your tech with business goals and optimize ROI.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Learn more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Service 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">
+                            <i class="fas fa-laptop-code text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Custom Software Development</h3>
+                        <p class="mt-2 text-gray-500">
+                            Tailored software solutions built to streamline your operations and enhance productivity.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Learn more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white mb-4">
+                            <i class="fas fa-cloud text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Cloud Solutions</h3>
+                        <p class="mt-2 text-gray-500">
+                            Scalable cloud infrastructure to support your business growth and digital transformation.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Learn more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white mb-4">
+                            <i class="fas fa-shield-alt text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900">Cybersecurity</h3>
+                        <p class="mt-2 text-gray-500">
+                            Comprehensive security solutions to protect your digital assets and customer data.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Learn more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#services" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-300">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Featured <span class="gradient-text">Courses</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Professional training programs to upskill your team
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-lock text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Cybersecurity</span>
+                            <span class="text-gray-500 text-sm ml-auto">4 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-2">Advanced Cybersecurity</h3>
+                        <p class="mt-3 text-gray-600">
+                            Master the latest techniques in cybersecurity and protect your organization from threats.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$499</span>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">AI/ML</span>
+                            <span class="text-gray-500 text-sm ml-auto">6 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-2">Machine Learning Fundamentals</h3>
+                        <p class="mt-3 text-gray-600">
+                            Learn the core concepts of machine learning and how to implement them in real-world scenarios.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$699</span>
+                            <button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-300">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-cloud text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Cloud</span>
+                            <span class="text-gray-500 text-sm ml-auto">5 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-2">Cloud Architecture</h3>
+                        <p class="mt-3 text-gray-600">
+                            Design and implement scalable cloud solutions using AWS, Azure, and Google Cloud.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$599</span>
+                            <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Course 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-lock text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Cybersecurity</span>
+                            <span class="text-gray-500 text-sm ml-auto">4 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-2">Advanced Cybersecurity</h3>
+                        <p class="mt-3 text-gray-600">
+                            Master the latest techniques in cybersecurity and protect your organization from threats.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$499</span>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">AI/ML</span>
+                            <span class="text-gray-500 text-sm ml-auto">6 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-2">Machine Learning Fundamentals</h3>
+                        <p class="mt-3 text-gray-600">
+                            Learn the core concepts of machine learning and how to implement them in real-world scenarios.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$699</span>
+                            <button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-300">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-cloud text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Cloud</span>
+                            <span class="text-gray-500 text-sm ml-auto">5 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-2">Cloud Architecture</h3>
+                        <p class="mt-3 text-gray-600">
+                            Design and implement scalable cloud solutions using AWS, Azure, and Google Cloud.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$599</span>
+                            <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Course 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-lock text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Cybersecurity</span>
+                            <span class="text-gray-500 text-sm ml-auto">4 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-2">Advanced Cybersecurity</h3>
+                        <p class="mt-3 text-gray-600">
+                            Master the latest techniques in cybersecurity and protect your organization from threats.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$499</span>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">AI/ML</span>
+                            <span class="text-gray-500 text-sm ml-auto">6 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-2">Machine Learning Fundamentals</h3>
+                        <p class="mt-3 text-gray-600">
+                            Learn the core concepts of machine learning and how to implement them in real-world scenarios.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$699</span>
+                            <button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-300">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-cloud text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Cloud</span>
+                            <span class="text-gray-500 text-sm ml-auto">5 Weeks</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mt-2">Cloud Architecture</h3>
+                        <p class="mt-3 text-gray-600">
+                            Design and implement scalable cloud solutions using AWS, Azure, and Google Cloud.
+                        </p>
+                        <div class="mt-6 flex items-center justify-between">
+                            <span class="text-2xl font-bold text-gray-900">$599</span>
+                            <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300">
+                                Enroll Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#courses" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-300">
+                    Browse All Courses
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-100 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    What Our <span class="gradient-text">Clients Say</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Trusted by businesses of all sizes across industries
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Sarah Johnson</h4>
+                            <p class="text-gray-500">CTO, TechSolutions Inc.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "IT Techfusion transformed our digital infrastructure with their cloud solutions. Their team was professional, knowledgeable, and delivered beyond our expectations."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/44.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Michael Chen</h4>
+                            <p class="text-gray-500">CEO, DataSystems LLC</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "The cybersecurity training our team received was exceptional. We've significantly improved our security posture thanks to VisionEdge's expertise."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-900">Emily Rodriguez</h4>
+                            <p class="text-gray-500">Director of IT, Global Retail</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "Their custom software solution automated our inventory management, saving us thousands of hours annually. The ROI was immediate and substantial."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    See Us <span class="gradient-text">In Action</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Discover how our solutions can transform your business
+                </p>
+            </div>
+            
+            <div class="aspect-w-16 aspect-h-9 rounded-xl shadow-xl overflow-hidden">
+                <div class="w-full h-96 bg-gray-200 flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-play-circle text-6xl text-blue-600 mb-4"></i>
+                        <p class="text-xl font-medium text-gray-700">Company Overview Video</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="py-16 bg-gray-100 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Latest <span class="gradient-text">Insights</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Stay updated with industry trends and best practices
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>May 15, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">The Future of Cloud Computing in 2023</h3>
+                        <p class="text-gray-600 mb-4">
+                            Explore the emerging trends in cloud technology and how they're reshaping business infrastructure.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-purple-600"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>June 2, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">AI-Powered Cybersecurity: What You Need to Know</h3>
+                        <p class="text-gray-600 mb-4">
+                            Learn how artificial intelligence is revolutionizing threat detection and security protocols.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-green-600"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>June 18, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Digital Transformation: A Step-by-Step Guide</h3>
+                        <p class="text-gray-600 mb-4">
+                            Practical strategies for businesses looking to embark on their digital transformation journey.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>May 15, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">The Future of Cloud Computing in 2023</h3>
+                        <p class="text-gray-600 mb-4">
+                            Explore the emerging trends in cloud technology and how they're reshaping business infrastructure.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-purple-600"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>June 2, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">AI-Powered Cybersecurity: What You Need to Know</h3>
+                        <p class="text-gray-600 mb-4">
+                            Learn how artificial intelligence is revolutionizing threat detection and security protocols.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-green-600"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>June 18, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Digital Transformation: A Step-by-Step Guide</h3>
+                        <p class="text-gray-600 mb-4">
+                            Practical strategies for businesses looking to embark on their digital transformation journey.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>May 15, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">The Future of Cloud Computing in 2023</h3>
+                        <p class="text-gray-600 mb-4">
+                            Explore the emerging trends in cloud technology and how they're reshaping business infrastructure.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-purple-600"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>June 2, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">AI-Powered Cybersecurity: What You Need to Know</h3>
+                        <p class="text-gray-600 mb-4">
+                            Learn how artificial intelligence is revolutionizing threat detection and security protocols.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-green-600"></div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>June 18, 2023</span>
+                            <span class="mx-2">•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Digital Transformation: A Step-by-Step Guide</h3>
+                        <p class="text-gray-600 mb-4">
+                            Practical strategies for businesses looking to embark on their digital transformation journey.
+                        </p>
+                        <a href="#" class="text-blue-600 hover:text-blue-500 font-medium">Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#blog" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-300">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Preview -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-12">
+                        <h2 class="text-3xl font-bold text-white">Ready to Transform Your Business?</h2>
+                        <p class="mt-4 text-blue-100">
+                            Get in touch with our team to discuss how we can help you achieve your technology goals.
+                        </p>
+                        <div class="mt-8">
+                            <div class="flex items-start mb-6">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-white font-medium">Our Location</p>
+                                    <p class="text-blue-100"> Multan, Punjab 60650, PKs</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start mb-6">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-white text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-white font-medium">Call Us</p>
+                                    <p class="text-blue-100">923187558141</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-envelope text-white text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-white font-medium">Email Us</p>
+                                    <p class="text-blue-100">info@fusiontech.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-12">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="grid grid-cols-1 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                    <input type="text" id="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                    <input type="email" id="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                    <textarea id="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                                        Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-gray-900 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Stay <span class="gradient-text">Updated</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-300 mx-auto">
+                    Subscribe to our newsletter for the latest insights and updates
+                </p>
+            </div>
+            
+            <div class="mt-8 max-w-xl mx-auto">
+                <form class="sm:flex">
+                    <label for="email-address" class="sr-only">Email address</label>
+                    <input id="email-address" name="email" type="email" autocomplete="email" required class="w-full px-5 py-3 border border-transparent placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:max-w-xs rounded-md" placeholder="Enter your email">
+                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                        <button type="submit" class="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+                <p class="mt-3 text-sm text-gray-300">
+                    We respect your privacy. Unsubscribe at any time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <h3 class="text-2xl font-bold text-white mb-4">IT Techfusion Solutions</h3>
+                    <p class="text-gray-300">
+                        Empowering businesses with innovative technology solutions since 2010.
+                    </p>
+                    <div class="mt-6 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Solutions</h3>
+                    <div class="mt-4 space-y-4">
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Custom Software</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Cloud Services</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Cybersecurity</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Data Analytics</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">AI Solutions</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Company</h3>
+                    <div class="mt-4 space-y-4">
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">About Us</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Careers</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Blog</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Contact</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Testimonials</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Legal</h3>
+                    <div class="mt-4 space-y-4">
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Privacy Policy</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Terms of Service</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">Cookie Policy</a>
+                        <a href="#" class="text-base text-gray-400 hover:text-white block">GDPR</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between">
+                <p class="text-base text-gray-400">
+                    &copy; 2025 IT Techfusion Solutions. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-base text-gray-400 hover:text-white mr-4">Sitemap</a>
+                    <a href="#" class="text-base text-gray-400 hover:text-white mr-4">Accessibility</a>
+                    <a href="#" class="text-base text-gray-400 hover:text-white">Status</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- About Us Page (hidden by default, shown when navigating) -->
+    <section id="about" class="hidden pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+                    About <span class="gradient-text">VisionEdge</span>
+                </h1>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Pioneering technology solutions since 2010
+                </p>
+            </div>
+            
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                <div class="lg:col-span-6">
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
+                        <p class="text-gray-600">
+                            To empower businesses of all sizes with innovative, reliable, and scalable technology solutions that drive growth, efficiency, and competitive advantage in an increasingly digital world.
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Vision</h2>
+                        <p class="text-gray-600">
+                            We envision a future where technology is an enabler rather than a barrier, where businesses can focus on their core competencies while we handle the complexities of digital transformation.
+                        </p>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium text-blue-800 mb-3">Core Values</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Innovation: Constantly pushing boundaries</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Integrity: Doing what's right</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Excellence: Quality in everything we do</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Collaboration: Partnering for success</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-12 lg:mt-0 lg:col-span-6">
+                    <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+                        <img class="w-full h-auto" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="Our team">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leadership Team -->
+            <div class="mt-20">
+                <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Leadership <span class="gradient-text">Team</span></h2>
+                
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Team Member 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                        <div class="h-64 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center">
+                            <img class="h-40 w-40 rounded-full border-4 border-white" src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Peterson">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-900">John Peterson</h3>
+                            <p class="text-blue-600 font-medium">CEO & Founder</p>
+                            <p class="mt-3 text-gray-600">
+                                Technology visionary with 20+ years of experience in software development and enterprise solutions.
+                            </p>
+                            <div class="mt-4 flex justify-center space-x-4">
+                                <a href="#" class="text-blue-500 hover:text-blue-700">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="text-blue-500 hover:text-blue-700">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                        <div class="h-64 bg-gradient-to-r from-purple-400 to-purple-600 flex items-center justify-center">
+                            <img class="h-40 w-40 rounded-full border-4 border-white" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Chen">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-900">Sarah Chen</h3>
+                            <p class="text-purple-600 font-medium">CTO</p>
+                            <p class="mt-3 text-gray-600">
+                                Cybersecurity expert and cloud architect with a passion for building scalable, secure systems.
+                            </p>
+                            <div class="mt-4 flex justify-center space-x-4">
+                                <a href="#" class="text-purple-500 hover:text-purple-700">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="text-purple-500 hover:text-purple-700">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover">
+                        <div class="h-64 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
+                            <img class="h-40 w-40 rounded-full border-4 border-white" src="https://randomuser.me/api/portraits/men/68.jpg" alt="Michael Rodriguez">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold text-gray-900">Michael Rodriguez</h3>
+                            <p class="text-green-600 font-medium">VP of Operations</p>
+                            <p class="mt-3 text-gray-600">
+                                Operations leader focused on delivering exceptional client experiences and operational excellence.
+                            </p>
+                            <div class="mt-4 flex justify-center space-x-4">
+                                <a href="#" class="text-green-500 hover:text-green-700">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="text-green-500 hover:text-green-700">
+                                    <i class="fas fa-globe"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Company Timeline -->
+            <div class="mt-20">
+                <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Our <span class="gradient-text">Journey</span></h2>
+                
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="hidden sm:block absolute h-full w-0.5 bg-blue-200 left-1/2 transform -translate-x-1/2"></div>
+                    
+                    <div class="space-y-8 sm:space-y-0">
+                        <!-- Timeline Item 1 -->
+                        <div class="relative sm:flex items-center">
+                            <div class="sm:w-1/2 sm:pr-8 sm:text-right">
+                                <div class="p-6 bg-white rounded-lg shadow-md">
+                                    <h3 class="text-xl font-bold text-blue-600">Company Founded</h3>
+                                    <p class="text-gray-500">2010</p>
+                                    <p class="mt-2 text-gray-600">
+                                        VisionEdge was founded with a mission to deliver innovative technology solutions to small and medium businesses.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="hidden sm:flex sm:w-1/2 sm:pl-8">
+                                <div class="h-4 w-4 rounded-full bg-blue-600 border-4 border-blue-200"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 2 -->
+                        <div class="relative sm:flex items-center">
+                            <div class="hidden sm:flex sm:w-1/2 sm:pr-8 sm:text-right">
+                                <div class="h-4 w-4 rounded-full bg-blue-600 border-4 border-blue-200"></div>
+                            </div>
+                            <div class="sm:w-1/2 sm:pl-8">
+                                <div class="p-6 bg-white rounded-lg shadow-md">
+                                    <h3 class="text-xl font-bold text-blue-600">First Major Client</h3>
+                                    <p class="text-gray-500">2012</p>
+                                    <p class="mt-2 text-gray-600">
+                                        Secured our first enterprise client, marking our transition into serving larger organizations.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 3 -->
+                        <div class="relative sm:flex items-center">
+                            <div class="sm:w-1/2 sm:pr-8 sm:text-right">
+                                <div class="p-6 bg-white rounded-lg shadow-md">
+                                    <h3 class="text-xl font-bold text-blue-600">Cloud Division Launched</h3>
+                                    <p class="text-gray-500">2015</p>
+                                    <p class="mt-2 text-gray-600">
+                                        Expanded our services to include cloud migration and management solutions.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="hidden sm:flex sm:w-1/2 sm:pl-8">
+                                <div class="h-4 w-4 rounded-full bg-blue-600 border-4 border-blue-200"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 4 -->
+                        <div class="relative sm:flex items-center">
+                            <div class="hidden sm:flex sm:w-1/2 sm:pr-8 sm:text-right">
+                                <div class="h-4 w-4 rounded-full bg-blue-600 border-4 border-blue-200"></div>
+                            </div>
+                            <div class="sm:w-1/2 sm:pl-8">
+                                <div class="p-6 bg-white rounded-lg shadow-md">
+                                    <h3 class="text-xl font-bold text-blue-600">Global Expansion</h3>
+                                    <p class="text-gray-500">2018</p>
+                                    <p class="mt-2 text-gray-600">
+                                        Opened offices in Europe and Asia, establishing our presence as a global technology partner.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Item 5 -->
+                        <div class="relative sm:flex items-center">
+                            <div class="sm:w-1/2 sm:pr-8 sm:text-right">
+                                <div class="p-6 bg-white rounded-lg shadow-md">
+                                    <h3 class="text-xl font-bold text-blue-600">AI Solutions Introduced</h3>
+                                    <p class="text-gray-500">2021</p>
+                                    <p class="mt-2 text-gray-600">
+                                        Launched our AI and machine learning division, helping clients harness the power of data.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="hidden sm:flex sm:w-1/2 sm:pl-8">
+                                <div class="h-4 w-4 rounded-full bg-blue-600 border-4 border-blue-200"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Milestones -->
+            <div class="mt-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl shadow-xl overflow-hidden">
+                <div class="p-12 text-center">
+                    <h2 class="text-3xl font-bold text-white mb-8">Our <span class="gradient-text">Achievements</span></h2>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-white mb-2">250+</div>
+                            <div class="text-blue-100 font-medium">Satisfied Clients</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-white mb-2">98%</div>
+                            <div class="text-blue-100 font-medium">Client Retention</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-white mb-2">40+</div>
+                            <div class="text-blue-100 font-medium">Countries Served</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-white mb-2">5</div>
+                            <div class="text-blue-100 font-medium">Industry Awards</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Page (hidden by default, shown when navigating) -->
+    <section id="services" class="hidden pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+                    Our <span class="gradient-text">Services</span>
+                </h1>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Comprehensive solutions tailored to your business needs
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-12">
+                <!-- Service 1 -->
+                <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                    <div class="lg:col-span-5">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl shadow-xl h-64 lg:h-full"></div>
+                    </div>
+                    <div class="mt-8 lg:mt-0 lg:col-span-7">
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                <i class="fas fa-laptop-code text-xl"></i>
+                            </div>
+                            <h2 class="ml-4 text-2xl font-bold text-gray-900">Custom Software Development</h2>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            We design and build bespoke software solutions that align perfectly with your business processes. Our team works closely with you to understand your unique requirements and deliver applications that drive efficiency and growth.
+                        </p>
+                        <div class="mt-6">
+                            <h3 class="text-lg font-medium text-gray-900">Key Features:</h3>
+                            <ul class="mt-2 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Tailored to your specific business needs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Scalable architecture for future growth</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Seamless integration with existing systems</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Ongoing support and maintenance</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition duration-300">
+                                Request a Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                    <div class="lg:col-span-5 lg:order-last">
+                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl shadow-xl h-64 lg:h-full"></div>
+                    </div>
+                    <div class="mt-8 lg:mt-0 lg:col-span-7 lg:order-first">
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
+                                <i class="fas fa-cloud text-xl"></i>
+                            </div>
+                            <h2 class="ml-4 text-2xl font-bold text-gray-900">Cloud Solutions & Migration</h2>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            Our cloud experts help you leverage the power of cloud computing to improve flexibility, reduce costs, and enhance collaboration. We provide end-to-end cloud services from strategy to implementation and management.
+                        </p>
+                        <div class="mt-6">
+                            <h3 class="text-lg font-medium text-gray-900">Key Features:</h3>
+                            <ul class="mt-2 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Comprehensive cloud strategy development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Seamless migration to AWS, Azure, or Google Cloud</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Cost optimization and performance tuning</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">24/7 monitoring and support</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-300">
+                                Request a Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                    <div class="lg:col-span-5">
+                        <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-xl shadow-xl h-64 lg:h-full"></div>
+                    </div>
+                    <div class="mt-8 lg:mt-0 lg:col-span-7">
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
+                                <i class="fas fa-shield-alt text-xl"></i>
+                            </div>
+                            <h2 class="ml-4 text-2xl font-bold text-gray-900">Cybersecurity Services</h2>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            Protect your business from evolving cyber threats with our comprehensive security solutions. We provide risk assessments, vulnerability testing, and robust security frameworks to safeguard your digital assets.
+                        </p>
+                        <div class="mt-6">
+                            <h3 class="text-lg font-medium text-gray-900">Key Features:</h3>
+                            <ul class="mt-2 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Enterprise-grade security architecture</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Penetration testing and vulnerability assessments</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Compliance with industry regulations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Security awareness training</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 transition duration-300">
+                                Request a Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                    <div class="lg:col-span-5 lg:order-last">
+                        <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl shadow-xl h-64 lg:h-full"></div>
+                    </div>
+                    <div class="mt-8 lg:mt-0 lg:col-span-7 lg:order-first">
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-yellow-500 text-white">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                            <h2 class="ml-4 text-2xl font-bold text-gray-900">Data Analytics & BI</h2>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            Transform your data into actionable insights with our advanced analytics solutions. We help you collect, process, and visualize data to drive informed decision-making across your organization.
+                        </p>
+                        <div class="mt-6">
+                            <h3 class="text-lg font-medium text-gray-900">Key Features:</h3>
+                            <ul class="mt-2 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Custom data pipelines and ETL processes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Interactive dashboards and reports</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Predictive analytics and machine learning</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-yellow-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Data governance and quality assurance</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-yellow-600 hover:bg-yellow-700 transition duration-300">
+                                Request a Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                    <div class="lg:col-span-5">
+                        <div class="bg-gradient-to-r from-red-500 to-red-600 rounded-xl shadow-xl h-64 lg:h-full"></div>
+                    </div>
+                    <div class="mt-8 lg:mt-0 lg:col-span-7">
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                                <i class="fas fa-robot text-xl"></i>
+                            </div>
+                            <h2 class="ml-4 text-2xl font-bold text-gray-900">AI & Machine Learning</h2>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            Harness the power of artificial intelligence to automate processes, enhance customer experiences, and uncover hidden patterns in your data. Our AI solutions are tailored to your specific business challenges.
+                        </p>
+                        <div class="mt-6">
+                            <h3 class="text-lg font-medium text-gray-900">Key Features:</h3>
+                            <ul class="mt-2 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-red-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Custom AI model development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-red-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Natural language processing solutions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-red-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Computer vision applications</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-red-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">AI-powered recommendation engines</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 transition duration-300">
+                                Request a Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                    <div class="lg:col-span-5 lg:order-last">
+                        <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl shadow-xl h-64 lg:h-full"></div>
+                    </div>
+                    <div class="mt-8 lg:mt-0 lg:col-span-7 lg:order-first">
+                        <div class="flex items-center">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                <i class="fas fa-mobile-alt text-xl"></i>
+                            </div>
+                            <h2 class="ml-4 text-2xl font-bold text-gray-900">Mobile App Development</h2>
+                        </div>
+                        <p class="mt-4 text-gray-600">
+                            Create engaging mobile experiences for your customers with our cross-platform app development services. We build high-performance apps that deliver seamless user experiences across iOS and Android.
+                        </p>
+                        <div class="mt-6">
+                            <h3 class="text-lg font-medium text-gray-900">Key Features:</h3>
+                            <ul class="mt-2 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Native and cross-platform development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">UI/UX focused design</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">App store optimization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-indigo-500 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Ongoing maintenance and updates</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300">
+                                Request a Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pricing Section -->
+            <div class="mt-24">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Flexible <span class="gradient-text">Pricing</span>
+                    </h2>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                        Choose the plan that fits your business needs
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Plan 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 card-hover">
+                        <div class="px-6 py-8">
+                            <h3 class="text-lg font-medium text-gray-900">Starter</h3>
+                            <div class="mt-4 flex items-baseline">
+                                <span class="text-4xl font-extrabold text-gray-900">$999</span>
+                                <span class="ml-1 text-lg font-medium text-gray-500">/mo</span>
+                            </div>
+                            <p class="mt-4 text-gray-500">
+                                Perfect for small businesses getting started with technology solutions
+                            </p>
+                        </div>
+                        <div class="border-t border-gray-200 px-6 py-8 bg-gray-50">
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Up to 10 hours of consulting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Basic cloud setup</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                                    <span class="text-gray-700">Email support</span>
+                                </li>
+                                <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuBtn = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Optional: Back to top button functionality
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.remove('opacity-100', 'visible');
+                backToTop.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+</script>
+
+                                
+</body>
+</html>
